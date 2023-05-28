@@ -1,4 +1,4 @@
-package com.example.jspprac;
+package com.example.jspprac.Servlet;
 
 import java.io.*;
 import javax.servlet.ServletException;
