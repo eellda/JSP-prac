@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -18,6 +19,8 @@ public class Calc2Suvlet extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
 
         ServletContext application = req.getServletContext();
+        HttpSession session = req.getSession();
+
         String v_ = req.getParameter("v");
         String op = req.getParameter("operator");
 
@@ -29,9 +32,11 @@ public class Calc2Suvlet extends HttpServlet {
         }
 
         if (op.equals("=")) {
-            int x = (int) application.getAttribute("value");
+            //int x = (int) application.getAttribute("value");
+            int x = (int) session.getAttribute("value");
             int y = v;
-            String operator = (String) application.getAttribute("op");
+            //String operator = (String) application.getAttribute("op");
+            String operator = (String) session.getAttribute("op");
             int res = 0;
 
             if (operator.equals("+")) {
@@ -41,9 +46,10 @@ public class Calc2Suvlet extends HttpServlet {
             }
             out.printf("result: " + res);
         } else {
-
-            application.setAttribute("value", v);
-            application.setAttribute("op", op);
+//            application.setAttribute("value", v);
+//            application.setAttribute("op", op);
+            session.setAttribute("value", v);
+            session.setAttribute("op", op);
         }
 
     }
