@@ -70,6 +70,8 @@ public class Calc2Suvlet extends HttpServlet {
 
             Cookie valueCookie = new Cookie("value", String.valueOf(v));
             Cookie opCookie = new Cookie("op", op);
+            valueCookie.setPath("/add"); // 모든 페이지를 요청할 때마다 이 쿠키는 가져오라는 뜻
+            opCookie.setPath("/add");
             resp.addCookie(valueCookie);
             resp.addCookie(opCookie);
         }
