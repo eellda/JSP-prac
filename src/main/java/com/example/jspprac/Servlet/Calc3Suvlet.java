@@ -38,6 +38,8 @@ public class Calc3Suvlet extends HttpServlet {
             } catch (ScriptException e) {
                 throw new RuntimeException(e);
             }
+        } else if (operator != null && operator.equals("C")) {
+            exp = "";
         } else {
             exp += (value == null) ? "" : value;
             exp += (operator == null) ? "" : operator;
@@ -45,6 +47,9 @@ public class Calc3Suvlet extends HttpServlet {
         }
 
         Cookie expCookie = new Cookie("exp", exp);
+        if (operator != null && operator.equals("C")) {
+            expCookie.setMaxAge(0); // 쿠키가 브라우저로 가서 바로 삭제
+        }
         resp.addCookie(expCookie);
         resp.sendRedirect("calcpage"); // 페이지 전환
     }
