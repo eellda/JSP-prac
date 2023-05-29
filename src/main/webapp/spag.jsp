@@ -12,6 +12,9 @@
     <title>Title</title>
 </head>
 <body>
- <%=request.getAttribute("result") %> 입니다.
+    <%=request.getAttribute("result") %> 입니다.
+    ${result}
+    ${names[1]}<br>
+    ${notice.title}
 </body>
 </html>
