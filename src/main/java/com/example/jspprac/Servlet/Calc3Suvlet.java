@@ -7,8 +7,8 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "calc2Servlet", value = "/calc2")
-public class Calc2Suvlet extends HttpServlet {
+@WebServlet(name = "calc3Servlet", value = "/calc3")
+public class Calc3Suvlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,6 @@ public class Calc2Suvlet extends HttpServlet {
 
         int v = 0;
         int x = 0;
-
 
         if (!v_.equals("")) {
             v = Integer.parseInt(v_);
