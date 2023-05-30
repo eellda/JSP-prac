@@ -1,4 +1,17 @@
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%
+	String url = "jdbc:mariadb://localhost:3306/jsp_prac";
+	String sql = "SELECT * FROM NOTICE";
+	Class.forName("org.mariadb.jdbc.Driver");
+	Connection con = DriverManager.getConnection(url, "root", "1111");
+	Statement st = con.createStatement();
+	ResultSet rs = st.executeQuery(sql);
+
+%>
 <!DOCTYPE html>
 <html>
 
@@ -257,4 +270,9 @@
         </footer>
     </body>
     
-    </html>
+</html>
+<%
+	rs.close();
+	st.close();
+	con.close();
+%>
