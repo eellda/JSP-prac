@@ -1,4 +1,5 @@
 <%@ page import="java.sql.*" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
@@ -7,9 +8,22 @@
     Class.forName("org.mariadb.jdbc.Driver");
     Connection con = DriverManager.getConnection(url, "root", "1111");
     PreparedStatement st = con.prepareStatement(sql);
+    //    1번째 ?에 id
     st.setInt(1, id);
     ResultSet rs = st.executeQuery();
     rs.next();
+
+    // Model
+    String title = rs.getString("TITLE");
+    Date regdate = rs.getDate("REGDATE");
+    String writerId = rs.getString("WRITER_ID");
+    int hit = rs.getInt("HIT");
+    String files = rs.getString("FILES");
+    String content = rs.getString("CONTENT");
+
+    rs.close();
+    st.close();
+    con.close();
 %>
 <!DOCTYPE html>
 <html>
@@ -153,6 +167,7 @@
 						<li>공지사항</li>
 					</ul>
 				</div>
+
 				
 				<div class="margin-top first">
 						<h3 class="hidden">공지사항 내용</h3>
@@ -160,24 +175,24 @@
 							<tbody>
 								<tr>
 									<th>제목</th>
-									<td class="text-align-left text-indent text-strong text-orange" colspan="3"><%=rs.getString("TITLE") %></td>
+									<td class="text-align-left text-indent text-strong text-orange" colspan="3"><%=title %></td>
 								</tr>
 								<tr>
 									<th>작성일</th>
-									<td class="text-align-left text-indent" colspan="3"><%=rs.getDate("REGDATE") %></td>
+									<td class="text-align-left text-indent" colspan="3"><%=regdate %></td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td><%=rs.getString("WRITER_ID") %></td>
+									<td><%=writerId %></td>
 									<th>조회수</th>
-									<td><%=rs.getInt("HIT") %></td>
+									<td><%=hit %></td>
 								</tr>
 								<tr>
 									<th>첨부파일</th>
-									<td colspan="3"><%=rs.getString("FILES") %></td>
+									<td colspan="3"><%=files %></td>
 								</tr>
 								<tr class="content">
-									<td colspan="4"><%=rs.getString("CONTENT") %></td>
+									<td colspan="4"><%=content %></td>
 								</tr>
 							</tbody>
 						</table>
@@ -250,8 +265,3 @@
         </footer>
     </body>
 </html>
-<%
-    rs.close();
-    st.close();
-    con.close();
-%>
