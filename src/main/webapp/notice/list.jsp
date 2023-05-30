@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%
 	String url = "jdbc:mariadb://localhost:3306/jsp_prac";
-	String sql = "SELECT * FROM NOTICE";
+	String sql = "SELECT * FROM notice";
 	Class.forName("org.mariadb.jdbc.Driver");
 	Connection con = DriverManager.getConnection(url, "root", "1111");
 	Statement st = con.createStatement();
@@ -185,16 +185,16 @@
 					</thead>
 					<tbody>
 
-					<%for (int i = 0; i < 10; i++) {%>
+					<%while (rs.next()) {%>
 
 					<tr>
-						<td><%=i + 1 %></td>
-						<td class="title indent text-align-left"><a href="detail.html">스프링 8강까지의 예제 코드</a></td>
-						<td>newlec</td>
+						<td><%=rs.getInt("ID") %></td>
+						<td class="title indent text-align-left"><a href="detail.html"><%=rs.getString("TITLE") %>></a></td>
+						<td><%=rs.getString("WRITER_ID") %></td>
 						<td>
-							2019-08-18		
+							<%=rs.getDate("REGDATE") %>
 						</td>
-						<td>146</td>
+						<td><%=rs.getInt("HIT") %></td>
 					</tr>
 
 					<%}%>
