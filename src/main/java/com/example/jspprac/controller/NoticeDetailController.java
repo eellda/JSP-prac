@@ -1,5 +1,7 @@
 package com.example.jspprac.controller;
 
+import com.example.jspprac.entity.Notice;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,12 +37,24 @@ public class NoticeDetailController extends HttpServlet {
             String content = rs.getString("CONTENT");
 
             // 담기
-            request.setAttribute("title", title);
-            request.setAttribute("regdate", regdate);
-            request.setAttribute("writerId", writerId);
-            request.setAttribute("hit", hit);
-            request.setAttribute("files", files);
-            request.setAttribute("content", content);
+//            request.setAttribute("title", title);
+//            request.setAttribute("regdate", regdate);
+//            request.setAttribute("writerId", writerId);
+//            request.setAttribute("hit", hit);
+//            request.setAttribute("files", files);
+//            request.setAttribute("content", content);
+
+            Notice notice = new Notice(
+                    id,
+                    title,
+                    regdate,
+                    writerId,
+                    hit,
+                    files,
+                    content
+            );
+
+            request.setAttribute("n", notice);
 
             rs.close();
             st.close();

@@ -1,3 +1,43 @@
 
 I
 src/main/webapp/index.jsp,8\e\8e6d3b70c9f5b02570779b0441540d45eceb0ded
+H
+src/main/webapp/reg.html,c\f\cf0609d7f570b507f2a8974d7faac6286104393f
+O
+src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+J
+src/main/webapp/hello.html,6\a\6ab2a2837cad5dc80601f02585b9b0cb832d29b5
+i
+9src/main/java/com/example/jspprac/Servlet/CalcSuvlet.java,a\d\ad42c661f791f3392417557535662abb83058b1e
+m
+=src/main/java/com/example/jspprac/Servlet/CalcPageSuvlet.java,1\4\1470f8b8d8a47bf9a7ddf1bd5cb00025e29eb05a
+O
+src/main/webapp/calculator.html,3\a\3a29fc329c3a16bdb013e24327ed881c2412258b
+u
+Esrc/main/java/com/example/jspprac/filter/CharacterEncodingFilter.java,9\f\9fa6dcc831de6e6fe8b1b230323787987334934e
+p
+@src/main/java/com/example/jspprac/Servlet/CalculatorServlet.java,8\0\80d01bb18c5ab91d5b4c924cbb7385c6875b79f1
+N
+src/main/webapp/calculator.jsp,d\3\d3ed6a970fc537c6709136d841693ae7d9787828
+k
+;src/main/java/com/example/jspprac/Servlet/HelloServlet.java,e\5\e5eb041696593f858790df76d5ac34631833480e
+J
+src/main/webapp/calc3.html,4\1\410a9fb5f8a0c2ea07f57f0df242b19d9877f725
+j
+:src/main/java/com/example/jspprac/Servlet/Calc3Suvlet.java,6\7\6756b74f8b951585f30996649785affb0925e248
+j
+:src/main/java/com/example/jspprac/Servlet/Calc2Suvlet.java,d\7\d7be81e2426903c220d355dedb9e1728844bc40e
+j
+:src/main/java/com/example/jspprac/Servlet/SpagServlet.java,e\f\efdebcde24298300ba23533101111c3ff610460b
+H
+src/main/webapp/spag.jsp,5\a\5a653ff10537d00e5fabde2050b35dbcf07a29f1
+J
+src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b
+S
+#src/main/webapp/css/member-main.css,2\3\239336d70a9c742f7a2c2d9a6e07caba7ea373e1
+U
+%src/main/webapp/css/member-visual.css,9\f\9f55a2d7872de7939788037582a863f511089a48
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+doc/sql/Test.sql,b\3\b3cdebd5fd1f7fa96c22a262d59a7c1568d0c578

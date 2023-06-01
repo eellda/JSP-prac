@@ -1,0 +1,14 @@
+
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8´óñ¾†1
+h
+java:S1192P"FDefine a constant instead of duplicating this literal "</tr>" 6 times.(–ÿ’‹ıÿÿÿÿ8‹îğ¾†1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ó†¹ƒüÿÿÿÿ8ëÑŞ¾†1
+]	java:S125"<This block of commented-out lines of code should be removed.(Û‹¡úÿÿÿÿ8üÑŞ¾†1
+m
+java:S1989("PHandle the following exception that could be thrown by "getWriter": IOException.(¾šçŞ8ˆïğ¾†1
+o
+java:S3776w"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(üª¼í8úóñ¾†1
+d
+java:S1989"AHandle the "RuntimeException" thrown here in a "try/catch" block.(Ò‚Òéüÿÿÿÿ8üóñ¾†1
+v
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ôÙÜµúÿÿÿÿ8ıóñ¾†1

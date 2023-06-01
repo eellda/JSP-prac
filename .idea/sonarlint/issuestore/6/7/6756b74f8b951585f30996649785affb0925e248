@@ -1,0 +1,10 @@
+
+g	java:S112'"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ê¯¯¼†1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ó†¹ƒüÿÿÿÿ8í¯¯¼†1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Û‹¡úÿÿÿÿ8°¯¼†1
+W	java:S1255"<This block of commented-out lines of code should be removed.(ığ¹8Øé¢Å†1
+V
+java:S1128"9Remove this unused import 'javax.servlet.ServletContext'.(á¡æŞ8“°¯¼†1
+M
+java:S1128"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8“°¯¼†1

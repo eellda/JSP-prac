@@ -1,0 +1,19 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Žïµµ8Öýê¸†1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ó†¹ƒüÿÿÿÿ8Øýê¸†1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Û‹Ž¡úÿÿÿÿ8ûýê¸†1
+X
+java:S1854";Remove this useless assignment to local variable "session".(ôÜ½¯8ûýê¸†1
+a
+java:S1854"?Remove this useless assignment to local variable "application".(˜«®îùÿÿÿÿ8ûýê¸†1
+R
+java:S1481"0Remove this unused "application" local variable.(˜«®îùÿÿÿÿ8üýê¸†1
+I
+java:S1481",Remove this unused "session" local variable.(ôÜ½¯8ýýê¸†1
+]	java:S125$"<This block of commented-out lines of code should be removed.(“Þðµøÿÿÿÿ8þýê¸†1
+]	java:S125."<This block of commented-out lines of code should be removed.(»©ÖÔþÿÿÿÿ8þýê¸†1
+^
+java:S3457?"AFormat specifiers should be used instead of string concatenation.(ûì™Ð8ÿýê¸†1
+]	java:S125A"<This block of commented-out lines of code should be removed.(è•ßÃùÿÿÿÿ8ÿýê¸†1
+X	java:S125D"<This block of commented-out lines of code should be removed.(Ÿáþ8ÿýê¸†1
