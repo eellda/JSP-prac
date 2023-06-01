@@ -37,7 +37,5 @@ U
 %src/main/webapp/css/member-visual.css,9\f\9f55a2d7872de7939788037582a863f511089a48
 J
 src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 doc/sql/Test.sql,b\3\b3cdebd5fd1f7fa96c22a262d59a7c1568d0c578
