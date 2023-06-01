@@ -37,5 +37,11 @@ S
 #src/main/webapp/css/member-main.css,2\3\239336d70a9c742f7a2c2d9a6e07caba7ea373e1
 U
 %src/main/webapp/css/member-visual.css,9\f\9f55a2d7872de7939788037582a863f511089a48
-@
-doc/sql/Test.sql,b\3\b3cdebd5fd1f7fa96c22a262d59a7c1568d0c578
+\
+,src/main/webapp/WEB-INF/view/notice/list.jsp,1\3\136cff7c8f11f6bfbae543fdf3cc387333fcde41
+x
+Hsrc/main/java/com/example/jspprac/controller/NoticeDetailController.java,1\c\1cc75c610b2784ff44987970b4a96a75fdae384d
+v
+Fsrc/main/java/com/example/jspprac/controller/NoticeListController.java,7\3\7342b4754d26a6abce923d123bb313d7c504493e
+^
+.src/main/webapp/WEB-INF/view/notice/detail.jsp,2\4\24cbc49ced841c2f6a73e6642927f0dc404d4934
