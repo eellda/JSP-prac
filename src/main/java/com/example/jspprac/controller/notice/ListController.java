@@ -1,6 +1,6 @@
-package com.example.jspprac.controller;
+package com.example.jspprac.controller.notice;
 
-import com.example.jspprac.entity.Notice;
+import com.example.jspprac.entity.NoticeView;
 import com.example.jspprac.service.NoticeService;
 
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/notice/list")
-public class NoticeListController extends HttpServlet {
+public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String field_ = request.getParameter("f");
@@ -36,7 +36,7 @@ public class NoticeListController extends HttpServlet {
         }
 
         NoticeService service = new NoticeService();
-        List<Notice> list = service.getNoticeList(field, query, page);
+        List<NoticeView> list = service.getNoticeList(field, query, page);
         int count = service.getNoticeCount(field, query);
 
         request.setAttribute("list", list);

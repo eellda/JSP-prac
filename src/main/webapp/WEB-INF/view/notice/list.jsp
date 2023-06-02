@@ -34,7 +34,7 @@
         <!-- ---------------------------<header>--------------------------------------- -->
 
         <h1 id="logo">
-            <a href="/index.html">
+            <a href="/WEB-INF/view/index.html">
                 <img src="/images/logo.png" alt="뉴렉처 온라인"/>
             </a>
         </h1>
@@ -69,7 +69,7 @@
                 <nav id="acount-menu">
                     <h1 class="hidden">회원메뉴</h1>
                     <ul>
-                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="/WEB-INF/view/index.html">HOME</a></li>
                         <li><a href="/WEB-INF/view/member/login.html">로그인</a></li>
                         <li><a href="/WEB-INF/view/member/agree.html">회원가입</a></li>
                     </ul>
@@ -186,7 +186,8 @@
                     <c:forEach var="n" items="${list}">
                         <tr>
                             <td>${n.id}</td>
-                            <td class="title indent text-align-left"><a href="detail?id=${n.id}">${n.title}</a></td>
+                            <td class="title indent text-align-left"><a
+                                    href="detail?id=${n.id}">${n.title}</a><span>[${n.cmtCount}]</span></td>
                             <td>${n.writerId}</td>
                             <td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}"/></td>
                             <td>${n.hit}</td>

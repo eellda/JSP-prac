@@ -1,6 +1,7 @@
 package com.example.jspprac.service;
 
 import com.example.jspprac.entity.Notice;
+import com.example.jspprac.entity.NoticeView;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,23 +10,23 @@ import java.util.List;
 
 public class NoticeService {
 
-    public List<Notice> getNoticeList() {
+    public List<NoticeView> getNoticeList() {
         return getNoticeList("TITLE", "", 1);
     }
 
-    public List<Notice> getNoticeList(int page) {
+    public List<NoticeView> getNoticeList(int page) {
         return getNoticeList("title", "", page);
     }
 
-    public List<Notice> getNoticeList(String field, String query, int page) {
+    public List<NoticeView> getNoticeList(String field, String query, int page) {
 
-        List<Notice> list = new ArrayList<>();
+        List<NoticeView> list = new ArrayList<>();
         String sql = "SELECT * " +
                 "FROM ( " +
                 "  SELECT ROW_NUMBER() OVER (ORDER BY regdate DESC) AS num, n.* " +
                 "  FROM ( " +
-                "    SELECT notice.* " +
-                "    FROM notice WHERE " + field + " LIKE ? " +
+                "    SELECT notice_view.* " +
+                "    FROM notice_view WHERE " + field + " LIKE ? " +
                 "  ) AS n " +
                 ") AS subquery " +
                 "WHERE num BETWEEN ? AND ? " +
@@ -53,16 +54,17 @@ public class NoticeService {
                 String writerId = rs.getString("WRITER_ID");
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
-                String content = rs.getString("CONTENT");
+                //String content = rs.getString("CONTENT");
+                int cmtCount = rs.getInt("count(c.ID)");
 
-                Notice notice = new Notice(
+                NoticeView notice = new NoticeView(
                         id,
                         title,
                         regdate,
                         writerId,
                         hit,
                         files,
-                        content
+                        cmtCount
                 );
                 list.add(notice);
             }
