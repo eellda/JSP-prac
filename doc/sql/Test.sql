@@ -88,3 +88,16 @@ FROM
 UPDATE NOTICE
 SET FILES = CONCAT(FILES, 'test.zip')
 WHERE TITLE = '첫 번째 공지';
+
+
+CREATE TABLE NOTICE (
+                        ID INT AUTO_INCREMENT,
+                        TITLE NVARCHAR(100),
+                        WRITER_ID NVARCHAR(50),
+                        CONTENT LONGTEXT,
+                        REGDATE TIMESTAMP,
+                        HIT INT,
+                        FILES NVARCHAR(1000),
+                        PUB int DEFAULT 0,
+                        PRIMARY KEY (ID)
+);

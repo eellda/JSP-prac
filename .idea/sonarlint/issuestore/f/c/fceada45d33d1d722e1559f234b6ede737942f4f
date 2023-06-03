@@ -1,0 +1,82 @@
+
+`	java:S112N"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112P"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112y"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112{"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112¬"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112®"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ê"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ª"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112¬"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Ğ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ü"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ş"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+m
+java:S1192)"XDefine a constant instead of duplicating this literal "org.mariadb.jdbc.Driver" 7 times.(áğöX
+`
+java:S1192"JDefine a constant instead of duplicating this literal "SELECT * " 3 times.(ƒàÓè
+_
+java:S1192—"HDefine a constant instead of duplicating this literal "CONTENT" 3 times.(èµô
+}
+java:S1192&"gDefine a constant instead of duplicating this literal "jdbc:mariadb://localhost:3306/jsp_prac" 7 times.(€á
+c
+java:S11925"HDefine a constant instead of duplicating this literal "REGDATE" 4 times.(Ö—ñ·şÿÿÿÿ
+[
+java:S11928"FDefine a constant instead of duplicating this literal "FILES" 4 times.(ƒõ›Z
+`
+java:S11926"JDefine a constant instead of duplicating this literal "WRITER_ID" 4 times.(àœñ¾
+a
+java:S1192"FDefine a constant instead of duplicating this literal "TITLE" 5 times.(ïñ¸„øÿÿÿÿ
+e
+java:S1192"JDefine a constant instead of duplicating this literal "  FROM ( " 4 times.(´Åşıÿÿÿÿ
+8
+java:S1643è"Use a StringBuilder instead.(´ÙÈŞıÿÿÿÿ
+3
+java:S1643ë"Use a StringBuilder instead.(Ä¡ÓÜ
+Z
+java:S2147O"DCombine this catch with the one at line 77, which has the same body.(É®£
+L
+java:S6437*"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+V	java:S1259"<This block of commented-out lines of code should be removed.(„ÉŸúÿÿÿÿ
+[
+java:S2147z"ECombine this catch with the one at line 120, which has the same body.(É®£
+L
+java:S6437l"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+\
+java:S2147­"ECombine this catch with the one at line 171, which has the same body.(É®£
+M
+java:S6437Š"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+I
+java:S1481‘"-Remove this unused "noticeId" local variable.(ƒ«ë¶şÿÿÿÿ
+\
+java:S2147ë"ECombine this catch with the one at line 233, which has the same body.(É®£
+M
+java:S6437È"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+I
+java:S1481Ï"-Remove this unused "noticeId" local variable.(ƒ«ë¶şÿÿÿÿ
+\
+java:S2147«"ECombine this catch with the one at line 297, which has the same body.(É®£
+M
+java:S6437ˆ"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+I
+java:S1481"-Remove this unused "noticeId" local variable.(ƒ«ë¶şÿÿÿÿ
+F
+java:S1172³"*Remove this unused method parameter "ids".(†ÌÆûÿÿÿÿ
+A
+java:S1172·"*Remove this unused method parameter "ids".(€Øúº
+\
+java:S2147Ï"ECombine this catch with the one at line 333, which has the same body.(É®£
+M
+java:S6437Ã"6Revoke and change this password, as it is compromised.(ÿ³Ó­
+E
+java:S1172Ö")Remove this unused method parameter "id".(ÿï¯ğıÿÿÿÿ
+I
+java:S1172Ú"-Remove this unused method parameter "notice".(ğÃÕ²øÿÿÿÿ
+B
+java:S1168ß"+Return an empty collection instead of null.(¥¹ï
+\
+java:S2147ı"ECombine this catch with the one at line 379, which has the same body.(É®£
+M
+java:S6437õ"6Revoke and change this password, as it is compromised.(ÿ³Ó­

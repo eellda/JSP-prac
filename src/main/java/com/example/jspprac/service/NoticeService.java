@@ -30,7 +30,7 @@ public class NoticeService {
                 "  ) AS n " +
                 ") AS subquery " +
                 "WHERE num BETWEEN ? AND ? " +
-                "ORDER BY regdate DESC";
+                "ORDER BY regdate";
 
         // 1, 11, 21, ... = an - 1 + (page - 1) * 10 등차수열
         // 10, 20, 30, ... = page * 10
@@ -56,6 +56,7 @@ public class NoticeService {
                 String files = rs.getString("FILES");
                 //String content = rs.getString("CONTENT");
                 int cmtCount = rs.getInt("count(c.ID)");
+                boolean pub = rs.getBoolean("PUB");
 
                 NoticeView notice = new NoticeView(
                         id,
@@ -64,6 +65,7 @@ public class NoticeService {
                         writerId,
                         hit,
                         files,
+                        pub,
                         cmtCount
                 );
                 list.add(notice);
@@ -147,6 +149,8 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
+
 
                 notice = new Notice(
                         id,
@@ -155,7 +159,8 @@ public class NoticeService {
                         writerId,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
 
             }
@@ -206,6 +211,8 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
+
 
                 notice = new Notice(
                         id,
@@ -214,7 +221,8 @@ public class NoticeService {
                         writerId,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
 
             }
@@ -267,6 +275,8 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
+
 
                 notice = new Notice(
                         id,
@@ -275,7 +285,8 @@ public class NoticeService {
                         writerId,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
 
             }
@@ -302,7 +313,30 @@ public class NoticeService {
     }
 
     public int insertNotice(Notice notice) {
-        return 0;
+        int result = 0;
+
+        String sql = "INSERT INTO notice(TITLE, CONTENT, WRITER_ID, PUB, REGDATE) VALUES (?,?,?,?, NOW())";
+        String url = "jdbc:mariadb://localhost:3306/jsp_prac";
+
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, "root", "1111");
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, notice.getTitle());
+            st.setString(2, notice.getContent());
+            st.setString(3, notice.getWriterId());
+            st.setBoolean(4, notice.getPub());
+            result = st.executeUpdate();
+
+            st.close();
+            con.close();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return result;
     }
 
     public int deleteNotice(int id) {
@@ -317,4 +351,37 @@ public class NoticeService {
         return null;
     }
 
+    public int deleteNoticeAll(String[] delIds) {
+
+        int result = 0;
+        String params = "";
+
+        for (int i = 0; i < delIds.length; i++) {
+            params += delIds[i];
+
+            if (i < delIds.length - 1) {
+                params += ",";
+            }
+        }
+
+        String sql = "DELETE notice WHERE ID IN (" + params + ")";
+
+        String url = "jdbc:mariadb://localhost:3306/jsp_prac";
+
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, "root", "1111");
+            Statement st = con.createStatement();
+            result = st.executeUpdate(sql);
+
+            st.close();
+            con.close();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return result;
+    }
 }

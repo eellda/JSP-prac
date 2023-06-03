@@ -2,13 +2,10 @@
   Created by IntelliJ IDEA.
   User: sm
   Date: 2023-06-02
-  Time: 오후 4:49
+  Time: 오후 6:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 
@@ -75,8 +72,18 @@
                     <h1 class="hidden">회원메뉴</h1>
                     <ul>
                         <li><a href="/WEB-INF/view/index.html">HOME</a></li>
-                        <li><a href="/WEB-INF/view/member/login.html">로그인</a></li>
-                        <li><a href="/WEB-INF/view/member/agree.html">회원가입</a></li>
+
+
+                        <li>
+                            <form action="/logout" method="post">
+                                <input type="hidden" name="" value=""/>
+                                <input type="submit" value="로그아웃"
+                                       style="border:none;background: none;vertical-align: middle;font-size: 10px;color:#979797;font-weight: bold;"/>
+
+                            </form>
+                        </li>
+
+                        <li><a href="/member/agree">회원가입</a></li>
                     </ul>
                 </nav>
 
@@ -133,122 +140,52 @@
         <!-- --------------------------- main --------------------------------------- -->
 
 
-        <main class="main">
-            <h2 class="main title">공지사항</h2>
+        <main>
+            <h2 class="main title">공지사항 등록</h2>
 
             <div class="breadcrumb">
-                <h3 class="hidden">경로</h3>
+                <h3 class="hidden">breadlet</h3>
                 <ul>
                     <li>home</li>
-                    <li>고객센터</li>
+                    <li>게시글 관리</li>
                     <li>공지사항</li>
                 </ul>
             </div>
 
-            <div class="search-form margin-top first align-right">
-                <h3 class="hidden">공지사항 검색폼</h3>
-                <form class="table-form">
-                    <fieldset>
-                        <legend class="hidden">공지사항 검색 필드</legend>
-                        <label class="hidden">검색분류</label>
-                        <select name="f">
-                            <option value="title">제목</option>
-                            <option value="writerId">작성자</option>
-                        </select>
-                        <label class="hidden">검색어</label>
-                        <input type="text" name="q" value=""/>
-                        <input class="btn btn-search" type="submit" value="검색"/>
-                    </fieldset>
-                </form>
-            </div>
-
-            <form action="list" method="post">
-                <div class="notice margin-top">
-                    <h3 class="hidden">공지사항 목록</h3>
+            <form action="reg" method="post" enctype="multipart/form-data">
+                <div class="margin-top first">
+                    <h3 class="hidden">공지사항 입력</h3>
                     <table class="table">
-                        <thead>
-                        <tr>
-                            <th class="w60">번호</th>
-                            <th class="expand">제목</th>
-                            <th class="w100">작성자</th>
-                            <th class="w100">작성일</th>
-                            <th class="w60">조회수</th>
-                            <th class="w40">공개</th>
-                            <th class="w40">삭제</th>
-                        </tr>
-                        </thead>
                         <tbody>
-
-                        <c:forEach var="n" items="${list}">
-                            <tr>
-                                <td>${n.id}</td>
-                                <td class="title indent text-align-left"><a
-                                        href="detail?id=${n.id}">${n.title}</a><span>[${n.cmtCount}]</span></td>
-                                <td>${n.writerId}</td>
-                                <td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regdate}"/></td>
-                                <td>${n.hit}</td>
-                                <td><input type="checkbox" name="open-id" value="${n.id}"></td>
-                                <td><input type="checkbox" name="del-id" value="${n.id}"></td>
-                            </tr>
-                        </c:forEach>
-
+                        <tr>
+                            <th>제목</th>
+                            <td class="text-align-left text-indent text-strong text-orange" colspan="3">
+                                <input type="text" name="title"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td colspan="3" class="text-align-left text-indent"><input type="file"
+                                                                                       name="file"/></td>
+                        </tr>
+                        <tr class="content">
+                            <td colspan="4"><textarea class="content" name="content"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-align-right"><input class="vertical-align" type="checkbox"
+                                                                            id="open" name="open" value="true"><label
+                                    for="open" class="margin-left">바로공개</label></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
-
-                <c:set var="page" value="${(param.p == null) ? 1 : param.p }"></c:set>
-                <c:set var="startNum" value="${page - (page - 1) % 5}"></c:set>
-                <c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count / 10), '.')}"></c:set>
-
-                <div class="indexer margin-top align-right">
-                    <h3 class="hidden">현재 페이지</h3>
-                    <div><span class="text-orange text-strong">${(empty param.p) ? 1 : param.p}</span> / ${lastNum}
-                        pages
-                    </div>
-                </div>
-
-                <div class="text-align-right margin-top">
-                    <input type="submit" class="btn-text btn-default" name="cmd" value="일괄공개">
-                    <input type="submit" class="btn-text btn-default" name="cmd" value="일괄삭제">
-                    <a class="btn-text btn-default" href="reg">글쓰기</a>
+                <div class="margin-top text-align-center">
+                    <input class="btn-text btn-default" type="submit" value="등록"/>
+                    <a class="btn-text btn-cancel" href="list.html">취소</a>
                 </div>
             </form>
 
-            <div class="margin-top align-center pager">
-
-                <div>
-                    <c:if test="${startNum > 1}">
-                        <a class="btn btn-prev" href="?p=${startNum - 1}&t=&q=">이전</a>
-                    </c:if>
-                    <c:if test="${startNum <= 1}">
-                        <span class="btn btn-prev" onclick="alert('이전 페이지가 없습니다.');">이전</span>
-                    </c:if>
-                </div>
-
-                <ul class="-list- center">
-                    <c:set var="page" value="${(empty param.p) ? 1 : param.p}"></c:set>
-
-                    <c:forEach var="i" begin="0" end="4">
-                        <c:if test="${(startNum + i) <= lastNum}">
-                            <li><a class="-text- ${(page == (startNum + i)) ? 'orange' : ''} bold"
-                                   href="?p=${startNum + i}&f=${param.f}&q=${param.q}">${startNum + i}</a></li>
-                        </c:if>
-                    </c:forEach>
-                </ul>
-
-                <div>
-                    <c:if test="${startNum + 4 < lastNum}">
-                        <a class="btn btn-next" href="?p=${startNum + 5}">다음</a>
-                    </c:if>
-                    <c:if test="${startNum + 4 >= lastNum}">
-                        <span class="btn btn-next" onclick="alert('다음 페이지가 없습니다.');">다음</span>
-                    </c:if>
-                </div>
-
-            </div>
         </main>
-
-
     </div>
 </div>
 

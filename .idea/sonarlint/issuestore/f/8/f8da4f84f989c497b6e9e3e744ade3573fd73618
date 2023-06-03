@@ -1,0 +1,12 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áôù¥8ïåÏÚ‡1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ„Ñù8ñåÏÚ‡1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ÿş…8òåÏÚ‡1
+m
+java:S13016"KReplace this "switch" statement by "if" statements to increase readability.(Ï—íàıÿÿÿÿ8ôåÏÚ‡1
+C	java:S1316""Add a default case to this switch.(Ï—íàıÿÿÿÿ8ŠæÏÚ‡1
+m
+java:S34579"Q%n should be used in place of \n to produce the platform-specific line separator.(šÉ¿	8ŠæÏÚ‡1
+T	java:S1069"9Replace this use of System.out or System.err by a logger.(šÉ¿	8ŠæÏÚ‡1
+H
+java:S1481D"+Remove this unused "result" local variable.(³·êë8£İĞÚ‡1

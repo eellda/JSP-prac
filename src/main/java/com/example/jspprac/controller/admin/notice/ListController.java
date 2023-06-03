@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/admin/notice/list")
+@WebServlet("/admin/board/notice/list")
 public class ListController extends HttpServlet {
 
     @Override
@@ -43,5 +43,33 @@ public class ListController extends HttpServlet {
         request.setAttribute("list", list);
         request.setAttribute("count", count);
         request.getRequestDispatcher("/WEB-INF/view/admin/board/notice/list.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String[] openIds = request.getParameterValues("open-id");
+        String[] delIds = request.getParameterValues("del-id");
+        String cmd = request.getParameter("cmd");
+
+        switch (cmd) {
+            case "일괄공개": {
+                for (String openId : openIds) {
+                    System.out.printf("openId : %s\n", openId);
+                }
+                break;
+            }
+            case "일괄삭제": {
+                NoticeService service = new NoticeService();
+                int[] ids = new int[delIds.length];
+
+                for (int i = 0; i < delIds.length; i++) {
+                    ids[i] = Integer.parseInt(delIds[i]);
+                }
+                int result = service.deleteNoticeAll(delIds);
+                break;
+            }
+        }
+        // 삭제 후 페이지 다시 이동
+        response.sendRedirect("list");
     }
 }
